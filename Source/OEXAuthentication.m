@@ -226,7 +226,7 @@ OEXNSDataTaskRequestHandler OEXWrapURLCompletion(OEXURLRequestHandler completion
 
 + (void)registerUserWithApiVersion:(NSString *)apiVersion paramaters:(NSDictionary *)parameters completionHandler:(OEXURLRequestHandler)handler {
     NSURLSessionConfiguration* sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSString* path = [NSString oex_stringWithFormat:SIGN_UP_URL parameters:@{@"version" : apiVersion}];
+    NSString* path = [NSString oex_stringWithFormat:SIGN_UP_URL parameters:@{@"version" : @"v1"}];
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", [OEXConfig sharedConfig].apiHostURL, path]]];
     [request setHTTPMethod:@"POST"];
     
